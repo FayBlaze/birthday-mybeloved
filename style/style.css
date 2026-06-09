@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300italic');
+:root {
+  --primary-color: #5c9dd5;
+  --bg-color: linear-gradient(135deg, #2f80e4, #dec1db);
+  --secondary-color: #8b6a60;
+  --font-color: #eee2df;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  scrollbar-width: none;
+  overflow: hidden;
+  background: var(--bg-color);
+}
+.body1{
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;      /* Wajib: membuat tinggi halaman memenuhi 100% layar browser */
+  display: flex;          /* Mengaktifkan mode Flexbox */
+  justify-content: center; /* Memposisikan konten tepat di tengah secara Horizontal */
+  align-items: center;     /* Memposisikan konten tepat di tengah secara Vertikal */
+}
+.name {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+#cake {
+  display: block;
+  position: relative;
+  margin: -10em auto 0 auto;
+}
+
+/* === Candle === */
+
+.cake {
+  background: #ffffff;
+  border-radius: 10px;
+  position: absolute;
+  top: 228px;
+  left: 50%;
+  margin-left: -2.4px;
+  margin-top: -8.33333333px;
+  width: 5px;
+  height: 35px;
+  transform: translateY(-300px);
+  backface-visibility: hidden;
+  animation: in 500ms 6s ease-out forwards;
+}
+
+.cake:after,
+.cake:before {
+  background: rgba(255, 0, 0, 1);
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2.22222222px;
+}
+
+.cake:after {
+  top: 25%;
+  left: 0;
+}
+
+.cake:before {
+  top: 45%;
+  left: 0;
+}
+
+/* ==== Fire === */
+
+.fuego {
+  border-radius: 100%;
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  margin-left: -2.6px;
+  width: 6.66666667px;
+  height: 18px;
+}
+
+.fuego:nth-child(1) {
+  animation: fuego 2s 6.5s infinite;
+}
+
+.fuego:nth-child(2) {
+  animation: fuego 1.5s 6.5s infinite;
+}
+
+.fuego:nth-child(3) {
+  animation: fuego 1s 6.5s infinite;
+}
+
+.fuego:nth-child(4) {
+  animation: fuego 0.5s 6.5s infinite;
+}
+
+.fuego:nth-child(5) {
+  animation: fuego 0.2s 6.5s infinite;
+}
+
+/* === Animation Fire ==== */
+
+@keyframes fuego {
+  0%, 100% {
+    background: rgba(254, 248, 97, 0.5);
+    box-shadow: 0 0 40px 10px rgba(248, 233, 209, 0.2);
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    background: rgba(255, 50, 0, 0.1);
+    box-shadow: 0 0 40px 20px rgba(248, 233, 209, 0.2);
+    transform: translateY(-20px) scale(0);
+  }
+}
+
+@keyframes in {
+  to {
+    transform: translateY(0);
+  }
+}
+/*=== text === */
+.text {
+  color: var(--font-color);
+  font-weight: 400;
+  font-style: italic;
+  text-align: center;
+}
+
+.text h1 {
+  font-size: 1.4em;
+}
+
+#click-text{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  height: 100vh;
+}
+
+#click-text:hover{
+  cursor: pointer;
+}
+/* === button === */
+#nextBtn {
+  display: none; /* Disembunyikan dulu sampai animasi selesai */
+  margin-top: 25px; /* Jarak agar tidak menabrak teks Lovie */
+  padding: 10px 30px;
+  background-color: rgba(255, 255, 255, 0.2); /* Efek transparan */
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  border-radius: 30px;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.1rem;
+  font-style: normal;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#nextBtn:hover {
+  background-color: #ffffff;
+  color: #5c9dd5; /* Warna teks biru saat di-hover */
+}
+
+#pass-container {
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.Btn {
+  color: var(--primary-color);
+  background-color:var(--secondary-color);
+  border-radius: 20px;
+  border: none ;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+}
+
+#unlock-btn {
+  transition: all 0.3s ease;
+}
+
+#unlock-btn:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  cursor: pointer;
+}
+
+#send-btn {
+  margin-top: 12px;
+  background-color: var(--primary-color);
+  color: var(--font-color);
+}
+
+/* ==== box ==== */
+#pwd {
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  font-size: 1.1rem;
+}
+
+.message-container {
+  position: absolute;     /* Membuat kotak melayang bebas dari batasan body */
+  top: 40%;               /* Dorong batas atas kotak ke tengah layar (50%) */
+  left: 50%;              /* Dorong batas kiri kotak ke tengah layar (50%) */
+  transform: translate(-50%, -50%); /* Geser balik kotak agar titik tengahnya pas di pusat layar */
+  width: 90%;             /* Pakai persentase agar aman dan tidak mentok saat dibuka di HP */
+  max-width: 640px;       /* Batas lebar maksimal sesuai spesifikasi kamu */
+  box-sizing: border-box; /* Menjaga padding agar tidak merusak kalkulasi lebar */
+
+  /* width: 100%;
+  max-width: 600px; */
+  text-align: center;
+  color: var(--font-color);
+  padding: 20px;
+  
+}
+
+.message-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.message-container p {
+  font-size: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 30px;
+}
+#message-box {
+  border: none;
+  width: 100%;
+  height: 150px;
+  resize: none;
+  box-sizing: border-box; /* Tambahan ini biar lebarnya pas 100% dan tidak luber keluar kotak putih */
+}

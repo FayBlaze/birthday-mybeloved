@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Message For You</title>
+  <link rel="stylesheet" href="style/style.css">
+</head>
+<body id="body1">
+
+  <div class="message-container">
+    <h1>Happy Birthday, kak :)</h1>
+    <p>
+      (Tulis pesan romantis atau harapanmu untuknya di sini. Biarkan kalimat ini mengalir dan buat dia tersenyum saat membacanya.)
+    </p>
+
+    <form action="https://formspree.io/f/KODE_FORMSPREE_KAMU" method="POST">
+      <h3 class="text">Leave a reply for me:</h3>
+      
+      <input type="hidden" name="_subject" value="Balasan Surat Ulang Tahun dari Ayang!">
+      
+      <textarea id="message-box" name="pesan_balasan" placeholder="Tulis sesuatu di sini..." required></textarea>
+      <br>
+      <button class="Btn" id="send-btn" type="submit">Send Message</button>
+    </form>
+  </div>
+
+  <script>
+    // Memastikan layar muncul secara mulus
+    window.onload = () => {
+      document.body.classList.remove('fade-out');
+    };
+  </script>
+</body>
+</html>
