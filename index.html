@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hi :)</title>
   <link rel="stylesheet" href="style/style.css">
+  <script src="style/app.js" defer></script>
 
 </head>
 <body>
@@ -19,27 +20,5 @@
     <button class="Btn" id="unlock-btn" onclick="checkPassword()">Unlock</button>
   </div>
 
-  <script>
-    const correctPassword = "sayangku"; // UBAH PASSWORD DI SINI
-
-    function showInput() {
-      document.getElementById('click-text').style.display = 'none';
-      document.getElementById('pass-container').style.display = 'flex';
-    }
-
-    function checkPassword() {
-      const input = document.getElementById('pwd').value;
-      if(input === correctPassword) {
-        // Animasi Out
-        document.body.classList.add('fade-out');
-        // Tunggu layar kosong lalu pindah halaman
-        setTimeout(() => {
-          window.location.href = 'cake.html';
-        }, 1000); 
-      } else {
-        document.getElementById('error-message').innerText = "Password salah, coba ingat lagi! 😝";
-      }
-    }
-  </script>
 </body>
 </html>

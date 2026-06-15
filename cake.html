@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/style.css">
+    <script src="style/app.js" defer></script>
     <title>Lets start!!</title>
 </head>
 <body>
@@ -170,30 +171,6 @@
     <p class="name">Lovie</p>
     <button id="nextBtn" onclick="goToNext()">Click Here</button>
   </div>
-<script>
-setTimeout(() => {
-    const btn = document.getElementById('nextBtn');
-    btn.style.display = 'inline-block';// Tampilkan tombol
-    btn.animate(// Animasi fade in
-        [
-            { opacity: 0 },
-            { opacity: 1 }
-        ],
-        {
-            duration: 1000,
-            fill: 'forwards'
-        }
-    );
-}, 7000);// Menampilkan tombol setelah 7 detik
-
-function goToNext() {// Fungsi pindah halaman dengan fade out
-    document.body.classList.add('fade-out');
-
-    setTimeout(() => {
-        window.location.href = 'text.html';
-    }, 1000);
-}
-</script>
 
 </body>
 </html>
