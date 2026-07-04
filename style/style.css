@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300italic');
 :root {
-  --primary-color: #5c9dd5;
-  --bg-color: linear-gradient(135deg, #2f80e4, #dec1db);
-  --secondary-color: #8b6a60;
+  --primary-color: #7288AE;
+  --bg-color: linear-gradient(135deg, #111844, #4B5694);
+  --secondary-color: #EAE0CF;
   --font-color: #eee2df;
 }
 html,
@@ -133,6 +133,12 @@ body {
   font-size: 1.4em;
 }
 
+#error-message {
+  color: #CB2957;
+  font-size: 1em;
+  margin-top: 10px;
+}
+
 #click-text{
   display: flex;
   justify-content: center;
@@ -147,12 +153,12 @@ body {
 /* === button === */
 #nextBtn {
   display: none; /* Disembunyikan dulu sampai animasi selesai */
-  margin-top: 25px; /* Jarak agar tidak menabrak teks Lovie */
+  margin-top: 2px; /* Jarak agar tidak menabrak teks Lovie */
   padding: 10px 30px;
-  background-color: rgba(255, 255, 255, 0.2); /* Efek transparan */
-  border: 2px solid #ffffff;
-  color: #ffffff;
+  background-color: var(--secondary-color); /* Efek transparan */
+  color: var(--primary-color);
   border-radius: 30px;
+  border: none;
   font-family: 'Lato', sans-serif;
   font-size: 1.1rem;
   font-style: normal;
@@ -161,16 +167,22 @@ body {
   transition: all 0.3s ease;
 }
 
-#nextBtn:hover {
-  background-color: #ffffff;
-  color: #5c9dd5; /* Warna teks biru saat di-hover */
-}
+
 
 #pass-container {
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  display: none; /* Sembunyikan dari awal via CSS */
   flex-direction: column;
+  justify-content: center; /* Menengahkan secara vertikal */
+  align-items: center;     /* Menengahkan secara horizontal */
+  height: 100vh;           /* Mengambil tinggi layar penuh */
+  width: 100%;             /* Mengambil lebar layar penuh */
+  text-align: center;      /* Memastikan teks ikut ke tengah */
+  gap: 15px;               /* Memberi jarak rapi antara tulisan, kotak input, dan tombol */
+}
+
+/* Tambahan opsional: Agar kotak input dan tombol sejajar dan rapi */
+#pass-container form, #pass-container input, #pass-container button {
+  margin: 0;
 }
 
 .Btn {
@@ -184,6 +196,8 @@ body {
 
 #unlock-btn {
   transition: all 0.3s ease;
+  background-color: var(--secondary-color);
+  color: #4B5694;
 }
 
 #unlock-btn:hover {
@@ -204,6 +218,15 @@ body {
   border-radius: 20px;
   border: none;
   font-size: 1.1rem;
+  width: 100%;             /* Memaksa input melebar... */
+  max-width: 320px;        /* ...tapi maksimal lebarnya ditahan di 400px agar tidak kepanjangan di layar besar */
+  box-sizing: border-box;  /* Mencegah padding merusak ukuran lebar asli */
+  text-align: center;      /* (Opsional) Agar teks yang diketik atau placeholder berada pas di tengah */
+  font-family: lato;
+  background-color: var(--secondary-color);
+}
+#pwd::placeholder {
+  color: var(--primary-color);
 }
 
 .message-container {
