@@ -8,12 +8,16 @@
 html,
 body {
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
   scrollbar-width: none;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   background: var(--bg-color);
+  background-attachment: fixed; /* Mengunci gradient agar tidak ikut tergulung/terpotong saat di-scroll */
+  background-size: cover;       /* Memastikan warna menutup seluruh area layar */
+  padding: 0;
 }
-.body1{
+#body1{
   margin: 0;
   padding: 0;
   min-height: 100vh;      /* Wajib: membuat tinggi halaman memenuhi 100% layar browser */
@@ -208,8 +212,9 @@ body {
 
 #send-btn {
   margin-top: 12px;
-  background-color: var(--primary-color);
-  color: var(--font-color);
+  margin-bottom: 180px;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
 }
 
 /* ==== box ==== */
@@ -230,20 +235,13 @@ body {
 }
 
 .message-container {
-  position: absolute;     /* Membuat kotak melayang bebas dari batasan body */
-  top: 40%;               /* Dorong batas atas kotak ke tengah layar (50%) */
-  left: 50%;              /* Dorong batas kiri kotak ke tengah layar (50%) */
-  transform: translate(-50%, -50%); /* Geser balik kotak agar titik tengahnya pas di pusat layar */
+  margin: 60px auto;
   width: 90%;             /* Pakai persentase agar aman dan tidak mentok saat dibuka di HP */
   max-width: 640px;       /* Batas lebar maksimal sesuai spesifikasi kamu */
   box-sizing: border-box; /* Menjaga padding agar tidak merusak kalkulasi lebar */
-
-  /* width: 100%;
-  max-width: 600px; */
   text-align: center;
   color: var(--font-color);
-  padding: 20px;
-  
+  padding: 80px 20px 40px 20px;
 }
 
 .message-container h1 {
@@ -256,10 +254,22 @@ body {
       line-height: 1.6;
       margin-bottom: 30px;
 }
+
 #message-box {
   border: none;
   width: 100%;
   height: 150px;
   resize: none;
   box-sizing: border-box; /* Tambahan ini biar lebarnya pas 100% dan tidak luber keluar kotak putih */
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 1.1rem;
+  font-family: lato;
+  background-color: var(--secondary-color);
 }
+
+#message-box::placeholder {
+  color: var(--primary-color);
+  font-style: italic;
+}
+

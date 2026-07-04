@@ -5,26 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>A Message For You</title>
   <link rel="stylesheet" href="style/style.css">
+  <script src="style/app.js" defer></script>
 </head>
 <body id="body1">
-    <audio id="laguLatar">
-      <source src="src\Lana Del Rey - Young And Beautiful Lyrics.mp3" type="audio/mpeg">
+    <audio id="laguLatar" loop>
+      <source src="src/Song.mp3" type="audio/mpeg">
     </audio>
 
   <div class="message-container">
     <h1>Happy Birthday, kak :)</h1>
     <p>
-      (Tulis pesan romantis atau harapanmu untuknya di sini. Biarkan kalimat ini mengalir dan buat dia tersenyum saat membacanya.)
+      ciee, yang makin tua AHAHAHAHA. Semoga disisa waktunya ini, kakak ... ah template banget 
+      yak. mau bilang tetap cantik walau banyak jerawat tapi takut di IW IW in😔. mungkin 
+      websitenya terlalu sederhana yak? hehehe, maaf ya. Soalnya aku buat dari 0, aku 
+      minimalisair penggunaan AI, pake AI cuma kalo buntu banget, gatau errornya dimana.
+      Kalau lu liat source code nya, wkwkwkw berantakan banget sih. Semoga diumurmu yang 
+      hampir menginjak kepala orang ini ga sering sakit perut lagi, ga sering 
+      sakit keuing lagi, ga sering pusing lagi, ga alergi ayam dan anaknya lagi, lukanya 
+      ga sakit lagi, ga ada turu part dua. Semoga skripsinya lancar macam jalan tol, 
+      urusannya di simple kan, bisa COD buku sehari sekali, dan aku bisa makan durian.
+      gua ga tau lu baca dengan seksama, semoga iya. tapi 1 hal, soal mau jumpa si bila 
+      kemarin, entah apa yang kau lakukan sampai sepanik itu, LOGIKA NYA ya, tinggal ku telpon
+      kan?, ngapain repot repot jumpa, tapi ya sudahlah kau menyukai tantangan, jadi....
+      baik lu tunggu itu paket, soalnya bungkusannya agak ... gimana gitu, estimasinya hari 
+      ini nyampe. selamat menunggu. Makasih dan maaf ya kak, makasih udah mau komitmen, 
+      makasih udah mau bertahan, makasih udah mau sabar(ngadepin toddler), makasih banget.
+      dan maaf kalau hadirku bikin kehidupanmu syik syak syok, tapi sekarang udah 
+      engga kan? (sepertinya). oh iya... aku pernah baca story lu, pas lu minta kata-kata,
+      nah hari ini kukasih nih. <br><br>
+      Woman was made of a rib <br><br>
+      not higher than his head to be above it, <br><br>
+      not lower than his feet to be trampled beneath it, <br><br>
+      but close to his side to be equal, <br><br>
+      under his arm to be protected, <br><br>
+      and near his heart to be loved, <br><br>
+      may you be my rib🤍
     </p>
 
-    <form action= "https://formspree.io/f/mwvjagag" method="POST">
-      <h3 class="text">Leave a reply for me:</h3>
+    <form id="message-form" action="https://formspree.io/f/mwvjagag" method="POST">
+      <h3 class="text">Balas apa aja:</h3>
       
       <input type="hidden" name="_subject" value="Balasan Surat Ulang Tahun dari Ayang!">
       
-      <textarea id="message-box" name="pesan_balasan" placeholder="Tulis sesuatu di sini..." required></textarea>
+      <textarea id="message-box" name="pesan_balasan" placeholder="Tanggal jadian misalnya..." required></textarea>
       <br>
-      <button class="Btn" id="send-btn" type="submit">Send Message</button>
+      <button class="Btn" id="send-btn" type="submit">Balas</button>
     </form>
   </div>
 

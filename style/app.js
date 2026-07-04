@@ -1,6 +1,5 @@
 const lagu = document.getElementById('laguLatar');
-// Tentukan password yang benar di sini (misal: "01012000")
-const correctPassword = "01012000"; 
+const correctPassword = "05072005"; 
 
 // Fungsi untuk memunculkan form password saat tulisan "Mulai" diklik
 function showInput() {
@@ -13,17 +12,33 @@ function showInput() {
     }
 }
 
-// Jalankan fungsi otomatis saat halaman terbuka
 window.addEventListener('DOMContentLoaded', () => {
-    // Cek apakah status musik sudah diizinkan dari halaman sebelumnya
-    if (localStorage.getItem('musikMenyala') === 'true' && lagu) {
-        // Langsung coba putar musik secara murni
-        lagu.play().catch(() => {
-            /* Jaring Pengaman: Jika browser memblokir, musik berputar saat layar diklik */
-            document.addEventListener('click', () => { 
-                lagu.play(); 
-            }, { once: true });
-        });
+    const lagu = document.getElementById('laguLatar');
+
+    if (lagu) {
+        // Set volume agak pelan (opsional, biar tidak kaget)
+        lagu.volume = 0.8; 
+
+        // Fungsi internal untuk memaksa play
+        const putarMusik = () => {
+            lagu.play().then(() => {
+                console.log("Musik berhasil diputar!");
+                // Jika sukses diputar, hapus pemantau klik agar tidak keputar ulang terus
+                document.removeEventListener('click', putarMusik);
+                document.removeEventListener('touchstart', putarMusik);
+            }).catch((error) => {
+                console.log("Gagal autoplay, menunggu interaksi user...", error);
+            });
+        };
+
+        // Langsung coba putar saat halaman siap
+        putarMusik();
+
+        // JARING PENGAMAN: Begitu layar disentuh atau diklik di mana saja, musik AKAN berputar
+        document.addEventListener('click', putarMusik);
+        document.addEventListener('touchstart', putarMusik); // Khusus pengguna HP
+    } else {
+        console.error("Elemen dengan ID 'laguLatar' tidak ditemukan!");
     }
 });
 
