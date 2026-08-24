@@ -42,6 +42,40 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+//katex
+const equations = {
+    "equation-1": String.raw`
+        \int_{0}^{2} 6x(2-x)\,dx
+        +
+        \left.\frac{d}{dx}(x^3-3x^2)\right|_{x=2}
+        = 8
+    `,
+
+    "equation-2": String.raw`
+        \int_{0}^{1}(6x-3x^2)\,dx
+        +
+        \left.\frac{d}{dx}(x^2-x)\right|_{x=1}
+        = 3
+    `,
+
+    "equation-3": String.raw`
+        \int_{0}^{2}
+        \left(759x^2+\frac{1}{2}\right)\,dx
+        +
+        \left.\frac{d}{dx}(x^2-3x)\right|_{x=2}
+        = 2026
+    `
+};
+
+Object.entries(equations).forEach(([id, equation]) => {
+    const element = document.getElementById(id);
+
+    katex.render(equation, element, {
+        throwOnError: false,
+        displayMode: true
+    });
+});
+
 function checkPassword() {
     const input = document.getElementById('pwd').value;
     if(input === correctPassword) {

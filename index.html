@@ -3,19 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hi :)</title>
+  <title>Hi.</title>
   <link rel="stylesheet" href="style/style.css">
-  <script src="style/app.js" defer></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js" defer></script>
+  <script src="style/app2.js" defer></script>
 
 </head>
 <body>
 
-  <div class="text" id="click-text" onclick="showInput()">Mulai</div>
+  <div class="text" id="click-text" onclick="showInput()">MULAI</div>
 
   <div id="pass-container">
-    <h3 class="text">sebenarnya aku mau taruh tanggal jadian</h3>
+    <h3 class="text">Masukkan Tanggal Jadian</h3>
+    
+    <textarea class="formula" hidden>
+    1. \left(\frac{9}{2}\times 4\right)-10+\left(\frac{6}{3}-2\right)=...
+    </textarea>
+    <div class="equation"></div>
+
+    <textarea class="formula" hidden>
+    2. \left(\frac{5}{2}\times 4\right)-8+\frac{6-2}{4}=...
+    </textarea>
+    <div class="equation"></div>
+
+    <textarea class="formula" hidden>
+    3. \left(125\times 16\right)+\frac{90}{3}-\frac{12}{3}=...
+    </textarea>
+    <div class="equation"></div>
+
     <p id="error-message"></p>
-    <input type="password" id="pwd" placeholder="tapi tanggal lahirmu aja deh">
+    <input type="password" id="pwd" placeholder="ddmmyyyy">
     <br>
     <button class="Btn" id="unlock-btn" onclick="checkPassword()">Buka</button>
   </div>
