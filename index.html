@@ -33,9 +33,12 @@
     <div class="equation"></div>
 
     <p id="error-message"></p>
-    <input type="password" id="pwd" placeholder="ddmmyyyy">
-    <br>
-    <button class="Btn" id="unlock-btn" onclick="checkPassword()">Buka</button>
+
+    <form id="form-container" onsubmit="return false;">
+      <input type="password" id="pwd" placeholder="ddmmyyyy">
+      <br>
+      <button class="btn" id="unlock-btn" onclick="checkPassword()">BUKA</button>
+    </form>
   </div>
 
 </body>
